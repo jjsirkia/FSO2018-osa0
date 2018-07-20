@@ -1,0 +1,38 @@
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa osoiteriville
+"https://fullstack-exampleapp.herokuapp.com/notes"
+end note
+
+selain->palvelin: GET "https://fullstack-exampleapp.herokuapp.com/notes"
+note left of palvelin
+Muodostetaan HTML
+end note
+
+palvelin->selain: status 200, sivun HTML koodi
+
+selain -> palvelin: GET css & js
+note left of palvelin
+Muodostetaan .../main.css  (text/css) / Tyyli
+Muodostetaan .../main.js (application/javascript)
+end note
+
+palvelin->selain: status 200, css, js (par)
+note left of palvelin
+Lataa javascript tiedoston palvelimelta
+end note
+
+note right of selain:
+Selain suorittaa koodin (js)
+end note
+
+selain->palvelin: GET json
+note left of palvelin
+Muodostetaan .../data.json (application/json)
+end note
+palvelin->selain: status 200
+
+
+note left of selain
+selain n‰ytt‰‰ palvelimen palauttaman HTMLn, CSS tyylill‰, ...
+end note
